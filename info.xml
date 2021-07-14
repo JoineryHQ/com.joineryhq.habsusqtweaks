@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <extension key="com.joineryhq.habsusqtweaks" type="module">
   <file>habsusqtweaks</file>
-  <name>FIXME</name>
-  <description>FIXME</description>
+  <name>Habitat Susquhanna Tweaks</name>
+  <description>CiviCRM cusomizations for Habitat Susquehanna</description>
   <license>GPL-3.0</license>
   <maintainer>
     <author>Allen Shaw</author>
@@ -20,7 +20,7 @@
   <compatibility>
     <ver>5.0</ver>
   </compatibility>
-  <comments>This is a new, undeveloped module</comments>
+  <comments>Developed by Joinery for Habitat Susquehanna</comments>
   <classloader>
     <psr4 prefix="Civi\" path="Civi"/>
   </classloader>
