@@ -7,7 +7,7 @@ The extension is licensed under [GPL-3.0](LICENSE.txt).
 ## Requirements
 
 * PHP v7.0+
-* CiviCRM (*FIXME: Version number*)
+* CiviCRM 5.0
 
 ## Installation (Web UI)
 
@@ -20,7 +20,7 @@ install it with the command-line tool [cv](https://github.com/civicrm/cv).
 
 ```bash
 cd <extension-dir>
-cv dl com.joineryhq.habsusqtweaks@https://github.com/FIXME/com.joineryhq.habsusqtweaks/archive/master.zip
+cv dl com.joineryhq.habsusqtweaks@https://github.com/JoineryHQ/com.joineryhq.habsusqtweaks/archive/master.zip
 ```
 
 ## Installation (CLI, Git)
@@ -29,7 +29,7 @@ Sysadmins and developers may clone the [Git](https://en.wikipedia.org/wiki/Git) 
 install it with the command-line tool [cv](https://github.com/civicrm/cv).
 
 ```bash
-git clone https://github.com/FIXME/com.joineryhq.habsusqtweaks.git
+git clone https://github.com/JoineryHQ/com.joineryhq.habsusqtweaks.git
 cv en habsusqtweaks
 ```
 
