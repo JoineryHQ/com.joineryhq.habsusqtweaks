@@ -4,6 +4,21 @@ CiviCRM cusomizations for Habitat Susquehanna
 
 The extension is licensed under [GPL-3.0](LICENSE.txt).
 
+## Features
+
+### Customizations to event infromation pages:
+Only if all of the following are true:
+
+* The user is not logged in, and
+* The event is of type "Construction"
+
+Then make these changes on the event info page:
+
+* Replace each "Register Now" button with a button labeled "Create Account" which links to https://habitatsusq.org/volunteer-with-habitat/construction-volunteers/introduction-to-construction-volunteer-registration/​
+* Add this text at the top and bottom of the page:  
+  `You must first register for an account prior to registering for an event.`
+
+
 ## Requirements
 
 * PHP v7.0+
