@@ -6,6 +6,43 @@ use CRM_Habsusqtweaks_ExtensionUtil as E;
 // phpcs:enable
 
 /**
+ * Implements hook_civicrm_pageRun().
+ *
+ * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_pageRun/
+ */
+function habsusqtweaks_civicrm_pageRun(&$page) {
+  // Don't bother with any of this if the user is already logged in.
+  $contactId = CRM_Core_Session::getLoggedInContactID();
+  if (!$contactId) {
+    $pageName = $page->getVar('_name');
+    if ($pageName == 'CRM_Event_Page_EventInfo') {
+      // Get option value for event type 'Construction'
+      $optionValue = \Civi\Api4\OptionValue::get()
+        ->setCheckPermissions(FALSE)
+        ->addSelect('value')
+        ->addWhere('option_group_id:name', '=', 'event_type')
+        ->addWhere('name', '=', 'Construction')
+        ->setLimit(1)
+        ->execute()
+        ->first();
+      $constructionEventTypeId = ($optionValue['value'] ?? NULL);
+      if ($constructionEventTypeId) {
+        $eventId = $page->getVar('_id');
+        $event = \Civi\Api4\Event::get()
+          ->setCheckPermissions(FALSE)
+          ->addWhere('id', '=', $eventId)
+          ->setLimit(1)
+          ->execute()
+          ->first();
+        if ($event['event_type_id'] == $constructionEventTypeId) {
+          $resource = CRM_Core_Resources::singleton()->addScriptFile('com.joineryhq.habsusqtweaks', 'js/CRM_Event_Page_EventInfo_construction_anonymous.js');
+        }
+      }
+    }
+  }
+}
+
+/**
  * Implements hook_civicrm_config().
  *
  * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_config/
